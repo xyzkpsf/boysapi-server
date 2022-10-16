@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import { config } from './config/config';
 import characterRoutes from './routes/Character';
 import episodeRoutes from './routes/Episode';
+import affiliationRoutes from './routes/Affiliation';
 
 const app = express();
 
@@ -33,6 +34,7 @@ const startServer = () => {
 
     app.use('/api/character', characterRoutes);
     app.use('/api/episode', episodeRoutes);
+    app.use('/api/affiliation', affiliationRoutes);
 
     app.get('/ping', (req, res, next) => res.status(200).json({ hello: 'world' }));
 
