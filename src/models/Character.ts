@@ -10,14 +10,15 @@ export interface ICharacter {
     gender: string;
     status: string;
     affiliation: affiliationObject[];
-    family: familyObject[];
-    portrayed: string;
+    families: familyObject[];
+    portrayed: string[];
     first_seen: nameAndUrl;
     last_seen: nameAndUrl;
     season: number[];
     image: string;
     url: string;
 }
+
 const CharacterSchema = new Schema<ICharacter>({
     id: { type: Number, required: true },
     name: { type: String, required: true },
@@ -27,8 +28,8 @@ const CharacterSchema = new Schema<ICharacter>({
     gender: { type: String, required: true },
     status: { type: String, required: true },
     affiliation: { type: [Object], required: true },
-    family: { type: [Object], required: true },
-    portrayed: { type: String, required: true },
+    families: { type: [Object], required: true },
+    portrayed: { type: [String], required: true },
     first_seen: { type: Object, required: true },
     last_seen: { type: Object, required: true },
     season: { type: [String], required: true },
