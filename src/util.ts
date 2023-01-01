@@ -11,7 +11,7 @@ export type affiliationObject = {
     is_former: boolean;
 };
 
-export type familyObject = {
+export type familiesObject = {
     name: string;
     url: string;
     relationship: string;

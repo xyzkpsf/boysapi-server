@@ -11,14 +11,17 @@ export interface IAffiliation {
     url: string;
 }
 
-const AffiliationSchema = new Schema<IAffiliation>({
-    id: { type: Number, required: true },
-    name: { type: String, required: true },
-    leader: { type: Object, required: true },
-    current_member: { type: [Object], required: true },
-    former_member: { type: [Object], required: true },
-    associate: { type: [Object], required: true },
-    url: { type: String, required: true }
-});
+const AffiliationSchema = new Schema<IAffiliation>(
+    {
+        id: { type: Number, required: true },
+        name: { type: String, required: true },
+        leader: { type: Object, required: true },
+        current_member: { type: [Object], required: true },
+        former_member: { type: [Object], required: true },
+        associate: { type: [Object], required: true },
+        url: { type: String, required: true }
+    },
+    { collection: 'affiliations' }
+);
 
 export const AffiliationModel = model<IAffiliation>('Affiliation', AffiliationSchema);
